@@ -1,0 +1,11 @@
+@import "~bootswatch/dist/cosmo/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootswatch/dist/cosmo/bootswatch";
+@import '~bootstrap-vue/src/index.scss';
+
+.compact {
+  font-size: 87%;
+}
+label {
+  font-weight: bold;
+}
