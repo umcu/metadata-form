@@ -1,12 +1,7 @@
 <template>
   <fieldset class="mt-2">
-  <f-row :key="'author'+n">
-    <fl w="2" f="AuthorName" :btn="n==1"/><fv w="4" f="AuthorName"/>
-    <fl w="2" f="AuthorAffiliation"/><fv w="4" f="AuthorAffiliation"/>
-  </f-row>
-  <f-row :key="'authorid'+n">
-    <fl w="2" f="AuthorIdentifier"/><fv w="4" f="AuthorIdentifier"/>
-    <fl w="2" f="AuthorIdentifierScheme"/><fv w="4" f="AuthorIdentifierScheme"/>
+  <f-row :key="'authorName'+n">
+    <fl w="2" f="authorName" :btn="n==0"/><fv w="4" f="authorName"/>
   </f-row>
   </fieldset>
 </template>
