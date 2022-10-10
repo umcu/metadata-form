@@ -20,6 +20,9 @@
         <fl w="2" f="typeOfResearch"/><fv w="10" f="typeOfResearch"/>
       </f-row>
       <f-row>
+        <fl w="2" f="typeOfLicense"/><fv w="10" f="typeOfLicense"/>
+      </f-row>
+      <f-row>
         <fl w="2" f="timePeriodCoveredStart"/><fv w="4" f="timePeriodCoveredStart"/>
         <fl w="2" f="timePeriodCoveredEnd"/><fv w="4" f="timePeriodCoveredEnd"/>
       </f-row>
@@ -70,11 +73,12 @@ export default {
         let required = false;
         if (key.includes('#')) {
           const parts = key.split('#'); label = state.schema[parts[0]].label;
-          required = (parts[1] == '0')}
+          required = (parts[1] == '0') && state.schema[parts[0]].required}
         else {
           label = state.schema[key].label;
           required = state.schema[key].required}
         if (required && value.length == 0) {
+          console.log(`${key}=${value}: '${label}' is required.`);
           this.message = this.message.concat(`${label} is required. `)}
         valid = valid && (!required || value.length > 0)}
       // map to Dublin Core schema
@@ -90,7 +94,7 @@ export default {
         "filename": "objects/",
         'dc.title': obj['title'], 'dc.language': obj['language'],
         'dc.description': obj['dsDescriptionValue'],
-        'dc.dateSubmitted': obj['dateOfDeposit'],
+        'dc.dateSubmitted': obj['dateOfDeposit'], 'dc.rights': obj['typeOfLicense'],
         'dc.subject': subject, 'dc.creator': creator, 'dc.relation': related
       };
       let temporal = '';

@@ -21,6 +21,13 @@ const store = new Vuex.Store({
               {text: 'non-WMO',                                 value: 15},
               {text: 'fundamental/pre-clinical',                value: 10}
           ]},
+      typeOfLicense:         {label: 'Type of license',     type: 'choice', required: true,
+          options: [
+              {text: 'type 1: open data, CC-BY or CC-0',        value: 1},
+              {text: 'type 2: conditional data, UMCU license',  value: 2},
+              {text: 'type 3a: restricted data, metadata only', value: 3},
+              {text: 'type 3b: restricted data, apply DSA',     value: 4}
+          ]},
     },
     valid: null,
     checked: null,
