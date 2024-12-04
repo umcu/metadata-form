@@ -1,4 +1,4 @@
-# draco
+# Simple metadata form for stand-alone Archivematica installation
 
 ## Project setup
 ```
