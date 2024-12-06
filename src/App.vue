@@ -93,7 +93,7 @@ export default {
       let dcobj = {
         "filename": "objects/",
         'dc.title': obj['title'], 'dc.language': obj['language'],
-        'dc.description': obj['dsDescriptionValue'].replace(/[^\x20-\x7E]/g, ""),
+        'dc.description': obj['dsDescriptionValue'].replace(/[^\u0009\u000a\u000d\u0020-\uD7FF]/g, ""),
         'dc.dateSubmitted': obj['dateOfDeposit'], 'dc.rights': obj['typeOfLicense'],
         'dc.subject': subject, 'dc.creator': creator, 'dc.relation': related
       };
